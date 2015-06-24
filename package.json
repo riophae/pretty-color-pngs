@@ -4,8 +4,7 @@
   "description": "Generate images filled with pretty colors",
   "main": "lib/generate-png-image",
   "scripts": {
-    "init": "babel-node init",
-    "start": "babel-node init && babel-node generate-all-color-png-images"
+    "start": "babel-node init"
   },
   "author": "Riophae Lee",
   "homepage": "https://github.com/riophae/pretty-color-pngs",

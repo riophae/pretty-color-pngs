@@ -1,16 +1,15 @@
 import generatePNGImage from './lib/generate-png-image.js';
 
-let path = require('path');
-
 let prettyColors = Object.keys(require('pretty-colors'));
+let selectedColors;
+let outputPath;
 
 let generate = function* () {
   let index = 0;
-  let outputPath = path.resolve('./dist/all-pretty-colors');
-  let totalCount = prettyColors.length;
+  let totalCount = selectedColors.length;
 
   while (index++ < totalCount - 1) {
-    let color = prettyColors[index];
+    let color = selectedColors[index];
 
     yield () => {
       return generatePNGImage(color, outputPath)
@@ -35,4 +34,9 @@ let init = () => {
   });
 };
 
-init();
+export default (filterFn, pathStr) => {
+  selectedColors = prettyColors.filter(filterFn);
+  outputPath = pathStr;
+
+  return init();
+};
