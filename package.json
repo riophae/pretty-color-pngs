@@ -1,0 +1,17 @@
+{
+  "name": "pretty-color-pngs",
+  "version": "0.0.1",
+  "description": "Generate images filled with pretty colors",
+  "main": "lib/generate-png-image",
+  "scripts": {
+    "init": "babel-node init",
+    "start": "babel-node init && babel-node generate-all-color-png-images"
+  },
+  "author": "Riophae Lee",
+  "license": "MIT",
+  "dependencies": {
+    "app-root-dir": "^1.0.2",
+    "pngjs": "^0.4.0",
+    "pretty-colors": "git+https://github.com/riophae/pretty-colors.git"
+  }
+}
