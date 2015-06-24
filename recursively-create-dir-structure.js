@@ -31,8 +31,8 @@ let recurse = (obj, parentDirPath, promise) => {
   });
 };
 
-export default (dirStructure) => {
-  return recurse(dirStructure, __dirname, Promise.resolve()).catch((err) => {
+export default (dirStructure, rootDir) => {
+  return recurse(dirStructure, rootDir, Promise.resolve()).catch((err) => {
     console.error(`Uncaught error occurs while creating dir structure: ${error}`);
     throw err;
   });
