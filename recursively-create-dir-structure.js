@@ -33,7 +33,7 @@ let recurse = (obj, parentDirPath, promise) => {
 
 export default (dirStructure) => {
   return recurse(dirStructure, __dirname, Promise.resolve()).catch((err) => {
-    console.error(`Uncaught error while creating dir structure: ${error}`);
+    console.error(`Uncaught error occurs while creating dir structure: ${error}`);
     throw err;
   });
 };
