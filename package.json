@@ -13,6 +13,7 @@
     "pretty colors",
     "colors"
   ],
+  "readme": "Enjoy the beauty of color",
   "readmeFilename": "README.md",
   "license": "MIT",
   "maintainers": [
@@ -26,10 +27,11 @@
     "url": "https://github.com/riophae/pretty-color-pngs.git"
   },
   "dependencies": {
+    "parse-color": "^1.0.0",
     "pngjs": "^0.4.0",
     "pretty-colors": "git+https://github.com/riophae/pretty-colors.git"
   },
-	"devDependencies": {
+  "devDependencies": {
     "babel": "^5.6.5"
   }
 }
