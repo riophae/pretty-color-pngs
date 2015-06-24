@@ -10,7 +10,6 @@
   "author": "Riophae Lee",
   "license": "MIT",
   "dependencies": {
-    "app-root-dir": "^1.0.2",
     "pngjs": "^0.4.0",
     "pretty-colors": "git+https://github.com/riophae/pretty-colors.git"
   }
