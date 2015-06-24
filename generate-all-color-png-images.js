@@ -5,34 +5,34 @@ let path = require('path');
 let prettyColors = Object.keys(require('pretty-colors'));
 
 let generate = function* () {
-	let index = 0;
-	let outputPath = path.resolve('./dist/all-pretty-colors');
-	let totalCount = prettyColors.length;
+  let index = 0;
+  let outputPath = path.resolve('./dist/all-pretty-colors');
+  let totalCount = prettyColors.length;
 
-	while (index++ < totalCount - 1) {
-		let color = prettyColors[index];
+  while (index++ < totalCount - 1) {
+    let color = prettyColors[index];
 
-		yield () => {
-			return generatePNGImage(color, outputPath)
-		};
-	}
+    yield () => {
+      return generatePNGImage(color, outputPath)
+    };
+  }
 
-	return totalCount;
+  return totalCount;
 };
 
 let init = () => {
-	let worker = generate();
-	let item = worker.next();
-	let promise = item.value();
+  let worker = generate();
+  let item = worker.next();
+  let promise = item.value();
 
-	while (!item.done) {
-		item = worker.next();
-		promise = promise.then(item.value);
-	}
+  while (!item.done) {
+    item = worker.next();
+    promise = promise.then(item.value);
+  }
 
-	promise.then(() => {
-		console.log(`${item.value} images generated successfully.`);
-	});
+  promise.then(() => {
+    console.log(`${item.value} images generated successfully.`);
+  });
 };
 
 init();
