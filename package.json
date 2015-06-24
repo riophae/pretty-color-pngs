@@ -29,5 +29,8 @@
   "dependencies": {
     "pngjs": "^0.4.0",
     "pretty-colors": "git+https://github.com/riophae/pretty-colors.git"
+  },
+	"devDependencies": {
+    "babel": "^5.6.5"
   }
 }
