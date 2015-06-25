@@ -28,8 +28,7 @@ let recurse = (obj, parentDirPath, promise) => {
       let dirPath = parentDirPath + '/' + key;
       let workerPromise = createDir(dirPath, promise);
       workerPromise = recurse(obj[key], dirPath, workerPromise);
-      // ignore error
-      return workerPromise.catch((err) => {});
+      return workerPromise.catch((err) => {/* ignore it */});
     }
   });
 };
