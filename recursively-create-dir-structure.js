@@ -26,7 +26,10 @@ let recurse = (obj, parentDirPath, promise) => {
   return promise.then(() => {
     for (let key in obj) if (obj.hasOwnProperty(key)) {
       let dirPath = parentDirPath + '/' + key;
-      recurse(obj[key], dirPath, createDir(dirPath, promise));
+      let workerPromise = createDir(dirPath, promise);
+      workerPromise = recurse(obj[key], dirPath, workerPromise);
+      // ignore error
+      return workerPromise.catch((err) => {});
     }
   });
 };
