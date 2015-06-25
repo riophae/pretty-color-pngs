@@ -5,10 +5,12 @@ import generateAllColorImages from './generate-all-color-images.js';
 let path = require('path');
 let fs = require('fs');
 
+let rmrf = require('spawn-rmrf');
+
 let removeDistDir = () => {
   return new Promise((resolve, reject) => {
-    fs.rmdir('./dist', (err) => {
-      if (err) {
+    rmrf('./dist', (code) => {
+      if (code !== 0) {
         reject(err);
       } else {
         resolve();
@@ -32,7 +34,7 @@ let generateImages = () => {
 
 let init = () => {
   let workers = [
-    // removeDistDir,
+    removeDistDir,
     initDirStructure,
     generateImages
   ];

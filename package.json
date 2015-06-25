@@ -4,7 +4,7 @@
   "description": "Generate images filled with pretty colors",
   "main": "lib/generate-png-image",
   "scripts": {
-    "start": "babel-node init"
+    "start": "babel-node start"
   },
   "author": "Riophae Lee",
   "homepage": "https://github.com/riophae/pretty-color-pngs",
@@ -29,7 +29,8 @@
   "dependencies": {
     "parse-color": "^1.0.0",
     "pngjs": "^0.4.0",
-    "pretty-colors": "git+https://github.com/riophae/pretty-colors.git#v0.0.2"
+    "pretty-colors": "git+https://github.com/riophae/pretty-colors.git#v0.0.2",
+    "spawn-rmrf": "^1.0.0"
   },
   "devDependencies": {
     "babel": "^5.6.5"
