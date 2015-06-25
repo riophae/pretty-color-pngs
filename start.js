@@ -1,25 +1,21 @@
+import removeDirRecursively from './recursively-remove-dir.js';
 import createDirStructureRecursively from './recursively-create-dir-structure.js';
-import dirStructure from './dir-structure.json';
 import generateAllColorImages from './generate-all-color-images.js';
 
 let path = require('path');
 let fs = require('fs');
 
-let rmrf = require('spawn-rmrf');
-
 let removeDistDir = () => {
-  return new Promise((resolve, reject) => {
-    rmrf('./dist', (code) => {
-      if (code !== 0) {
-        reject(err);
-      } else {
-        resolve();
-      }
-    });
-  });
+  return removeDirRecursively(path.resolve('./dist'));
 };
 
 let initDirStructure = () => {
+  let dirStructure = {
+    dist: {
+      'all-pretty-colors': {}
+    }
+  };
+
   return createDirStructureRecursively(
     dirStructure,
     path.resolve('./')

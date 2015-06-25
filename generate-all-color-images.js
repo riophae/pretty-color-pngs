@@ -4,5 +4,5 @@ let path = require('path');
 
 export default (outputPath = './dist/all-pretty-colors') => {
   outputPath = path.resolve(outputPath);
-  return generateSelectedColorImages((x) => true, outputPath);
+  return generateSelectedColorImages(outputPath, (anyColor) => true);
 }
