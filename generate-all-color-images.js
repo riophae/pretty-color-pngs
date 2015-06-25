@@ -1,4 +1,4 @@
-import generateSelectedColorImages from './generate-selected-color-images.js';
+import generateSelectedColorImages from './lib/generate-selected-color-images.js';
 
 let path = require('path');
 

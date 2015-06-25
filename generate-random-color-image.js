@@ -1,8 +1,9 @@
 import generatePNGImage from './lib/generate-png-image.js';
+import getPrettyColors from './lib/get-pretty-colors.js';
 
 let path = require('path');
 
-let prettyColors = Object.keys(require('pretty-colors'));
+let prettyColors = getPrettyColors();
 
 let colorTotalCount = prettyColors.length;
 let randomColorIndex = Math.floor(Math.random() * colorTotalCount);
