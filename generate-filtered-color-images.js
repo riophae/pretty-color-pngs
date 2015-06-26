@@ -1,5 +1,5 @@
-import removeDirRecursively from './recursively-remove-dir.js';
-import createDirStructureRecursively from './recursively-create-dir-structure.js';
+import removeDirRecursively from './lib/recursively-remove-dir.js';
+import createDirStructureRecursively from './lib/recursively-create-dir-structure.js';
 import generateSelectedColorImages from './lib/generate-selected-color-images.js';
 import getPrettyColors from './lib/get-pretty-colors.js';
 
